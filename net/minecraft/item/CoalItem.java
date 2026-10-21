@@ -1,0 +1,27 @@
+/*
+ * Decompiled with CFR 0.2.2 (FabricMC 7c48b8c4).
+ */
+package net.minecraft.item;
+
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+
+public class CoalItem
+extends Item {
+    public CoalItem(int i) {
+        super(i);
+        this.setHasSubtypes(true);
+        this.setMaxDamage(0);
+    }
+
+    @Environment(value=EnvType.CLIENT)
+    public String getTranslationKey(ItemStack stack) {
+        if (stack.getDamage() == 1) {
+            return "item.charcoal";
+        }
+        return "item.coal";
+    }
+}
+
